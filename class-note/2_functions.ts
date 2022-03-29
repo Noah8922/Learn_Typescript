@@ -14,3 +14,8 @@ function add() : number {
 function sum(a:number,b:number): number {
     return a+b
 }
+
+sum(10,20) //이상적인 상태
+// sum(10,20,30,40) 
+// 오류가 나는 상태 : 2개의 인수가 필요한데 4개를 가져왔습니다.
+
