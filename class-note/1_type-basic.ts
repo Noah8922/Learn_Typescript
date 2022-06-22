@@ -13,8 +13,8 @@ let items : number[] = [1,2,3] // 위와 같은 말임,좀더 편한 방법
 let heroes:Array<string> = ['Capt', 'Thor', "Hulk", '10'] //숫자 10일경우 에러 표시 됨
 
 //TS 튜플, 배열의 특정 순서에서 순서의 타입까지 정의 하는 것
-let address : string[] = ['gangnam', 'pangyo']
-let position : [string, number] = ['gangnam', 123] 
+let address : string[] = ['gangnam', 'pangyo'] // 배열인데 sting만 들어간 배열.
+let position : [string, number] = ['gangnam', 123]  // 배열의 index의 타입까지 정하는 것, 첫번째는 스트링 두번째는 숫자 
 
 //TS 객체
 let obj:object = {}
@@ -23,7 +23,7 @@ let person : object = {
     name : 'capt',
     age : 100   
 }
-// 객체를 구체적으로 정의하고 싶을 때 쓰는 방법
+// 객체의 프로퍼티를 구체적으로 정의하고 싶을 때 쓰는 방법
 let people : {name : string, age : number} = {
     name : 'thor',
     age : 1000
