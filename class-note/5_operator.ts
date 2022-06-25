@@ -30,3 +30,30 @@ function filterType(value : string | number) {
     }
     throw new TypeError('Type must be string or number')
 }
+
+interface Developer {
+    name : string;
+    skill : string;
+}
+
+interface Person {
+    name : string;
+    age : number;
+}
+
+// 유니온 타입 - or Type, 공통된 속성만 사용이 가능하다. 두 타입중에 하나만 가능하다. 
+function askSomeone(someone : Developer | Person) {
+    someone.name
+}
+// intersection type, 모든 속성을 모두 사용 가능하다. 
+function pickSomeone(someone : Developer & Person) {
+    someone.age;
+    someone.name;
+    someone.skill;
+}
+
+// 실무에서는 유니온에서 더 많이 사용한다. 왜?
+// 유니온 타입과 인터섹션 타입의 차이점
+
+askSomeone({name: '디벨로퍼', skill:'웹 개발'})
+askSomeone({name: '캡틴',age:100})
