@@ -41,19 +41,24 @@ interface Person {
     age : number;
 }
 
-// 유니온 타입 - or Type, 공통된 속성만 사용이 가능하다. 두 타입중에 하나만 가능하다. 
+// 유니온 타입 - or Type, 공통된 속성만 사용이 가능하다. 둘중에 한 타입만 만족시키면 된다.
 function askSomeone(someone : Developer | Person) {
-    someone.name
+    // someone.name
 }
-// intersection type, 모든 속성을 모두 사용 가능하다. 
-function pickSomeone(someone : Developer & Person) {
-    someone.age;
-    someone.name;
-    someone.skill;
-}
-
-// 실무에서는 유니온에서 더 많이 사용한다. 왜?
-// 유니온 타입과 인터섹션 타입의 차이점
 
 askSomeone({name: '디벨로퍼', skill:'웹 개발'})
 askSomeone({name: '캡틴',age:100})
+
+// intersection type, 모든 속성을 모두 사용 가능하다. 두 타입 모두를 만족시켜야 한다.
+function pickSomeone(someone : Developer & Person) {
+    // someone.age;
+    // someone.name;
+    // someone.skill;
+}
+// pickSomeone({name:'디벨로퍼', skill:'웹 개발'})
+// 에러 발생
+// 이렇게 작성하면 Developer는 만족시키지만 Person은 만족시키지 못한다.
+// '{ name: string; skill: string; }' 형식의 인수는 'Developer & Person' 형식의 매개 변수에 할당될 수 없습니다. 'age' 속성이 '{ name: string; skill: string; }' 형식에 없지만 'Person' 형식에서 필수입니다.
+// 실무에서는 유니온에서 더 많이 사용한다. 왜?
+// 유니온 타입과 인터섹션 타입의 차이점
+
